@@ -46,7 +46,7 @@ impl Plugin for AseLoaderDefaultPlugin {
             .init_resource::<Loader>()
             .init_resource::<AseFileMap>()
             .init_asset_loader::<AseAssetLoader>()
-            .add_system(ase_importer.system());
+            .add_system(ase_importer);
     }
 }
 
@@ -284,7 +284,7 @@ pub(crate) type AseAssetResources<'a> = (
 /// // Creates a Bevy app and adds the ase_importer system.
 /// // This system is already added by default in AseLoaderPlugin.
 /// fn app() {
-///     App::build().add_system(ase_importer.system());
+///     App::build().add_system(ase_importer);
 /// }
 /// ```
 pub fn ase_importer(
